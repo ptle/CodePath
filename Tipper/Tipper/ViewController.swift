@@ -38,6 +38,10 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     @IBAction func updateTip(sender: AnyObject) {
+        let currencyFormatter = NSNumberFormatter()
+        currencyFormatter.usesGroupingSeparator = true
+        currencyFormatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
+        currencyFormatter.locale = NSLocale.currentLocale()
         let bill = Double(billField.text!) ?? 0
         var tipPercent = 0.00
         if percentageSEGMENT.selectedSegmentIndex == 0
@@ -52,11 +56,11 @@ class ViewController: UIViewController {
         {
             tipPercent = 0.20
         }
-        tipLabel.text = String(format: "$%.2f", tipPercent*bill)
-        totalLabel.text = String(format: "$%.2f", bill*(tipPercent+1))
-        twoPersonLabel.text = String(format: "$%.2f", (bill*(tipPercent+1))/2)
-        threePersonLabel.text = String(format: "$%.2f", (bill*(tipPercent+1))/3)
-        fourPersonLabel.text = String(format: "$%.2f", (bill*(tipPercent+1))/4)
+        tipLabel.text = currencyFormatter.stringFromNumber(tipPercent*bill)
+        totalLabel.text = currencyFormatter.stringFromNumber(bill*(tipPercent+1))
+        twoPersonLabel.text = currencyFormatter.stringFromNumber((bill*(tipPercent+1))/2)
+        threePersonLabel.text = currencyFormatter.stringFromNumber((bill*(tipPercent+1))/3)
+        fourPersonLabel.text = currencyFormatter.stringFromNumber((bill*(tipPercent+1))/4)
     }
 
     @IBAction func tap(sender: AnyObject) {
@@ -64,6 +68,10 @@ class ViewController: UIViewController {
     }
     
     @IBAction func calculateTip(sender: AnyObject) {
+        let currencyFormatter = NSNumberFormatter()
+        currencyFormatter.usesGroupingSeparator = true
+        currencyFormatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
+        currencyFormatter.locale = NSLocale.currentLocale()
         if billField.text != "" && changed == 0
         {
             changed = 1
@@ -99,11 +107,11 @@ class ViewController: UIViewController {
         {
             tipPercent = 0.20
         }
-        tipLabel.text = String(format: "$%.2f", tipPercent*bill)
-        totalLabel.text = String(format: "$%.2f", bill*(tipPercent+1))
-        twoPersonLabel.text = String(format: "$%.2f", (bill*(tipPercent+1))/2)
-        threePersonLabel.text = String(format: "$%.2f", (bill*(tipPercent+1))/3)
-        fourPersonLabel.text = String(format: "$%.2f", (bill*(tipPercent+1))/4)
+        tipLabel.text = currencyFormatter.stringFromNumber(tipPercent*bill)
+        totalLabel.text = currencyFormatter.stringFromNumber(bill*(tipPercent+1))
+        twoPersonLabel.text = currencyFormatter.stringFromNumber((bill*(tipPercent+1))/2)
+        threePersonLabel.text = currencyFormatter.stringFromNumber((bill*(tipPercent+1))/3)
+        fourPersonLabel.text = currencyFormatter.stringFromNumber((bill*(tipPercent+1))/4)
     }
 
 }
