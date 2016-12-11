@@ -22,19 +22,17 @@ The following **additional** features are implemented:
 
 * [x] Splits the bill when there is 2-4 people
 
-- [ ] List anything else that you can get done to improve the app functionality!
-
 ## Video Walkthrough 
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://imgur.com/a/pKhhF' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+The difficulty I ran into is I ran into the black screen error in the simulator. I fixed this by hitting simulator->Reset Content and Settings.
 
 ## License
 
