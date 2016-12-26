@@ -1,2 +1,2 @@
-# CodePath
-CodePath related projects
+# CodePath Pre-work
+Pre-work for Codepath
